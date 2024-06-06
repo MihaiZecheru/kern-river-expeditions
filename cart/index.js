@@ -56,6 +56,9 @@ function generateCartItem(id, img, people, name, pricePerPerson, date, time, dis
   <!-- Single item -->`;
 }
 
+const cartItems = JSON.parse(window.localStorage.getItem("cart"));
+get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
+
 function mapCartItemsToHTML(cartItems) {
   if (!cartItems) return `<h1 class="text-center">Cart is empty</h1>`;
 
@@ -66,9 +69,6 @@ function mapCartItemsToHTML(cartItems) {
 
   return html;
 }
-
-const cartItems = JSON.parse(window.localStorage.getItem("cart"));
-get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
 
 function update_checkout_prices() {
   const TAX_RATE = 7.25 / 100;
