@@ -1,0 +1,31 @@
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+.navbar-scrolled {
+  background-color: #3e4551;
+}
+
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .navbar-scroll {
+    background-color: #3e4551;
+  }
+}
+
+main {
+  margin-top: 250px;
+}
+
+header {
+  margin-bottom: 100px;
+}
+
+#terms-redirect {
+  background-color: transparent!important;
+}

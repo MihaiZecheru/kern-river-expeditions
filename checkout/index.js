@@ -1,0 +1,1 @@
+// TODO: clear localstorage 'cart' on checkout

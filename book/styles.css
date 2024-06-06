@@ -1,0 +1,46 @@
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+.navbar-scrolled {
+  background-color: #3e4551;
+}
+
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .navbar-scroll {
+    background-color: #3e4551;
+  }
+}
+
+nav {
+  background-color: var(--mdb-blue);
+}
+
+main, body {
+  height: 100vh!important;
+}
+body {
+  background-color: var(--mdb-light)
+}
+
+main {
+  margin-top: 10vh;
+}
+
+#stepper-wrapper {
+  min-width: 60%;
+}
+
+#book-btn {
+  background-color: var(--mdb-blue)!important;
+}
+
+.datepicker-header {
+  background-color: var(--mdb-blue)!important;
+}

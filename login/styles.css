@@ -1,0 +1,15 @@
+body, main, section {
+  height: 100%!important;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+body {
+  background-color: var(--mdb-body-bg);
+}
+
+#text-content {
+  background-color: var(--mdb-primary)!important;
+}
