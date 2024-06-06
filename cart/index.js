@@ -75,10 +75,9 @@ function update_checkout_prices() {
     const subtotalElement = get("subtotal");
     const taxElement = get("tax");
     const totalElement = get("total");
-    const subtotal = parseFloat(cartItems.reduce((acc, item) => acc + item.people * item.pricePerPerson, 0)).toFixed(2);
+    const subtotal = parseFloat(cartItems?.reduce((acc, item) => acc + item.people * item.pricePerPerson, 0) || 0.00).toFixed(2);
     const tax = parseFloat(subtotal * TAX_RATE).toFixed(2);
     const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
-    console.log(subtotal, tax, total)
     subtotalElement.textContent = `$${subtotal}`;
     taxElement.textContent = `$${tax}`;
     totalElement.textContent = `$${total}`;
