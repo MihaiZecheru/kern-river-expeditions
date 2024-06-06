@@ -56,7 +56,7 @@ function generateCartItem(id, img, people, name, pricePerPerson, date, time, dis
   <!-- Single item -->`;
 }
 
-const cartItems = JSON.parse(window.localStorage.getItem("cart")).filter(item => item !== null);
+const cartItems = JSON.parse(window.localStorage.getItem("cart"))?.filter(item => item !== null);
 get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
 
 function mapCartItemsToHTML(cartItems) {
@@ -75,7 +75,7 @@ function update_checkout_prices() {
     const subtotalElement = get("subtotal");
     const taxElement = get("tax");
     const totalElement = get("total");
-    const subtotal = parseFloat(cartItems.reduce((acc, item) => acc + item.people * item.pricePerPerson, 0) || 0.00).toFixed(2);
+    const subtotal = parseFloat(cartItems?.reduce((acc, item) => acc + item.people * item.pricePerPerson, 0) || 0.00).toFixed(2);
     const tax = parseFloat(subtotal * TAX_RATE).toFixed(2);
     const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
     subtotalElement.textContent = `$${subtotal}`;
