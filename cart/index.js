@@ -148,7 +148,7 @@ get("add-btn").addEventListener('click', () => {
 });
 
 setInterval(() => {
-  if (cartItems === null || cartItems.length === 0)
+  if (cartItems === null || cartItems?.length === 0)
     get("checkout-btn").classList.add("disabled");
   else
     get("checkout-btn").classList.remove("disabled");
