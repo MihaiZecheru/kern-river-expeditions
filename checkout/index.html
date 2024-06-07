@@ -29,144 +29,52 @@
   <title>Kern River Expeditions</title>
 </head>
 <body>
+  <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <!-- Container wrapper -->
-      <div class="container justify-content-center justify-content-md-between">
-        <!-- Left links -->
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item me-2 me-lg-0">
-            <a class="nav-link" href="#" role="button" data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1"
-              class="btn shadow-0 p-0 me-3" aria-controls="#sidenav-1" data-mdb-ripple-init aria-haspopup="true">
-              <i class="fas fa-bars me-1"></i>
-              <span>Categories</span>
-            </a>
-          </li>
-          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Bestsellers</a>
-          </li>
-          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Inspirations</a>
-          </li>
-          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <!-- Left links -->
-
-        <button class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
-          Download app<i class="fas fa-download ms-2"></i>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" data-mdb-navbar-init>
+      <div class="container">
+        <!-- <a class="navbar-brand" href="#!">Brand</a> -->
+        <button class="navbar-toggler" type="button" data-mdb-collapse-init
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
         </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/book">Book An Adventure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/terms">Terms</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row" id="icons-list">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="/cart">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="/login">
+                <i class="fas fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
-
-    <!-- Sidenav -->
-    <div id="sidenav-1" class="sidenav" data-mdb-sidenav-init role="navigation" data-mdb-hidden="true"
-      data-mdb-accordion="true">
-      <ul class="sidenav-menu">
-        <li class="sidenav-item">
-          <a class="sidenav-link"><i class="fas fa-layer-group pe-3"></i><span>Categories</span></a>
-          <ul class="sidenav-collapse show">
-            <li class="sidenav-item">
-              <a class="sidenav-link">Dresses</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Shirts</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Jeans</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Shoes</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Accessories</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Jewelry</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link"><i class="fas fa-gem pe-3"></i><span>Brands</span></a>
-          <ul class="sidenav-collapse">
-            <li class="sidenav-item">
-              <a class="sidenav-link">Brand 1</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Brand 2</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Brand 3</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Brand 4</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link"><i class="fas fa-gift pe-3"></i><span>Discounts</span></a>
-          <ul class="sidenav-collapse">
-            <li class="sidenav-item">
-              <a class="sidenav-link">-70%</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">-50%</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Any</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link"><i class="fas fa-fire-alt pe-3"></i><span>Popular</span></a>
-          <ul class="sidenav-collapse">
-            <li class="sidenav-item">
-              <a class="sidenav-link">Jewelry</a>
-            </li>
-            <li class="sidenav-item">
-              <a class="sidenav-link">Snickers</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link"><i class="fab fa-hotjar pe-3"></i><span>Today's bestseller</span></a>
-          <div class="card mx-3">
-            <div class="bg-image hover-zoom" data-mdb-ripple-init data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).jpg"
-                class="w-100" />
-              <a href="#!">
-                <div class="mask">
-                  <div class="d-flex justify-content-start align-items-end h-100">
-                    <h5><span class="badge bg-danger ms-2">-10%</span></h5>
-                  </div>
-                </div>
-                <div class="hover-overlay">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </div>
-              </a>
-            </div>
-            <div class="card-body">
-              <a href="" class="text-reset">
-                <p class="mb-2">Pink snickers</p>
-              </a>
-              <p class="mb-0">
-                <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- Sidenav -->
-
     <!-- Jumbotron -->
-    <div class="p-5 text-center bg-light">
+    <div class="p-5 m-5 text-center bg-light">
       <h1 class="mb-0 h3">Checkout</h1>
     </div>
     <!-- Jumbotron -->
@@ -181,114 +89,70 @@
         <div class="row gx-lg-5">
           <div class="col-lg-8 mb-4 mb-md-0">
             <!-- Section: Billing details -->
-            <section class="">
-              <form>
-                <h5 class="mb-4">Shipping address</h5>
+            <section id="payment-details">
+              <h5 class="mb-4">Payment</h5>
 
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row mb-4">
-                  <div class="col">
-                    <div class="form-outline" data-mdb-input-init>
-                      <input
-                            type="text"
-                            id="form6Example1"
-                            class="form-control"
-                            />
-                      <label class="form-label" for="form6Example1"
-                            >First name</label
-                        >
-                    </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3"
+                  checked />
+                <label class="form-check-label" for="checkoutForm3">
+                  Credit card
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
+                <label class="form-check-label" for="checkoutForm4">
+                  Debit card
+                </label>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm5" />
+                <label class="form-check-label" for="checkoutForm5">
+                  Paypal
+                </label>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="name-on-card" class="form-control" />
+                    <label class="form-label" for="name-on-card">Name on card</label>
                   </div>
-                  <div class="col">
-                    <div class="form-outline" data-mdb-input-init>
-                      <input
-                            type="text"
-                            id="form6Example2"
-                            class="form-control"
-                            />
-                      <label class="form-label" for="form6Example2"
-                            >Last name</label
-                        >
-                    </div>
+                </div>
+                <div class="col">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="credit-card-number" class="form-control" />
+                    <label class="form-label" for="credit-card-number">Credit card number</label>
                   </div>
                 </div>
+              </div>
 
-                <!-- Text input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input
-                        type="text"
-                        id="form6Example3"
-                        class="form-control"
-                        />
-                  <label class="form-label" for="form6Example3"
-                        >Company name</label
-                    >
+              <div class="row mb-4">
+                <div class="col-3">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="expiration" class="form-control" />
+                    <label class="form-label" for="expiration">Expiration</label>
+                  </div>
                 </div>
-
-                <!-- Text input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input
-                        type="text"
-                        id="form6Example4"
-                        class="form-control"
-                        />
-                  <label class="form-label" for="form6Example4"
-                        >Address</label
-                    >
+                <div class="col-3">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="cvv" class="form-control" />
+                    <label class="form-label" for="cvv">CVV</label>
+                  </div>
                 </div>
+              </div>
 
-                <!-- Email input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input
-                        type="email"
-                        id="form6Example5"
-                        class="form-control"
-                        />
-                  <label class="form-label" for="form6Example5"
-                        >Email</label
-                    >
-                </div>
+              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block d-flex justify-content-center" type="submit" id="save-card-btn">
+                Save Card
+              </button>
 
-                <!-- Number input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input
-                        type="number"
-                        id="form6Example6"
-                        class="form-control"
-                        />
-                  <label class="form-label" for="form6Example6"
-                        >Phone</label
-                    >
-                </div>
-
-                <!-- Message input -->
-                <div class="form-outline mb-5" data-mdb-input-init>
-                  <textarea
-                            class="form-control"
-                            id="form6Example7"
-                            rows="4"
-                            ></textarea>
-                  <label class="form-label" for="form6Example7"
-                        >Additional information</label
-                    >
-                </div>
-
-                <h5 class="mb-4">Billing address</h5>
-
-                <!-- Checkbox -->
-                <div class="form-check mb-2">
-                  <input
-                        class="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form6Example8"
-                        checked
-                        />
-                  <label class="form-check-label" for="form6Example8">
-                    Same as shipping address
-                  </label>
-                </div>
-              </form>
+              <div class="mt-3">
+                <p class="text-primary">
+                  <i class="fas fa-info-circle mr-1"></i> You will be emailed a receipt at <span id="email-info"></span>
+                </p>
+              </div>
             </section>
             <!-- Section: Billing details -->
           </div>
@@ -296,50 +160,30 @@
           <div class="col-lg-4 mb-4 mb-md-0">
             <!-- Section: Summary -->
             <section class="shadow-4 p-4 rounded-5 mb-4">
-              <h5 class="mb-5">The total amount of</h5>
+              <div class="w-100 d-flex justify-content-center">
+                <h5 class="mb-5">Checkout</h5>
+              </div>
 
               <div class="d-flex justify-content-between mb-3">
-                <span>Temporary amount </span>
-                <span>$53,98</span>
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
               </div>
               <div class="d-flex justify-content-between">
-                <span>Shipping </span>
-                <span>Gratis</span>
+                <span>Tax</span>
+                <span id="tax">$0.00</span>
               </div>
               <hr class="my-4" />
               <div class="d-flex justify-content-between fw-bold mb-5">
-                <span>The total amount of (including VAT) </span>
-                <span>$53,98</span>
+                <span>Total</span>
+                <span id="total">$0.00</span>
               </div>
 
-              <button
-                      type="button"
-                      class="btn btn-primary btn-rounded w-100" data-mdb-ripple-init
-                      >
-                Proceed to shipping
+              <button type="button" class="btn btn-primary btn-rounded w-100 d-flex justify-content-center" data-mdb-ripple-init id="pay-now-btn" data-mdb-animation-init data-mdb-animation="pulse" data-mdb-animation-duration="1000">
+                Pay Now
               </button>
             </section>
             <!-- Section: Summary -->
 
-            <!-- Section: Summary -->
-            <section class="shadow-4 p-4 rounded-5">
-              <h5 class="mb-4">Apply promo code</h5>
-
-              <div class="d-flex align-items-center">
-                <input
-                      type="text"
-                      class="form-control rounded me-1"
-                      placeholder="Promo code"
-                      />
-                <button
-                        type="button"
-                        class="btn btn-link btn-rounded overflow-visible" data-mdb-ripple-init
-                        >
-                  Apply
-                </button>
-              </div>
-            </section>
-            <!-- Section: Summary -->
           </div>
         </div>
       </section>
@@ -347,5 +191,38 @@
     </div>
   </main>
   <!--Main layout-->
+
+  <div class="modal fade" id="invalid-card-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Invalid Card</h5>
+          <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Your card was invalid. Check the card details and try again.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+  data-mdb-alert-init
+  class="alert fade"
+  id="alert-success"
+  role="alert"
+  data-mdb-color="success"
+  data-mdb-position="top-right"
+  data-mdb-stacking="true"
+  data-mdb-width="535px"
+  data-mdb-append-to-body="true"
+  data-mdb-hidden="true"
+  data-mdb-autohide="true"
+  data-mdb-delay="2000"
+  >
+    <div id="alert-primary-content">Card saved - continue to payment</div>
+  </div>
+
 </body>
 </html>
