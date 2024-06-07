@@ -1,3 +1,7 @@
 nav {
   background-color: var(--mdb-blue);
 }
+
+#discount {
+  color: red;
+}

@@ -136,9 +136,13 @@
                 <h5 class="mb-5">Checkout</h5>
               </div>
 
-              <div class="d-flex justify-content-between mb-3">
+              <div class="d-flex justify-content-between">
                 <span>Subtotal</span>
                 <span id="subtotal">$0.00</span>
+              </div>
+              <div class="d-flex justify-content-between mb-3 visually-hidden" id="discount-parent">
+                <span>Discount</span>
+                <span id="discount">- $0.00</span>
               </div>
               <div class="d-flex justify-content-between">
                 <span>Tax</span>
@@ -150,9 +154,9 @@
                 <span id="total">$0.00</span>
               </div>
 
-              <a href="/checkout" type="button" class="btn btn-primary btn-rounded w-100" data-mdb-ripple-init id="checkout-btn">
+              <button type="button" class="btn btn-primary btn-rounded w-100 d-flex justify-content-center" data-mdb-ripple-init id="checkout-btn">
                 Go to checkout
-              </a>
+              </button>
             </section>
             <!-- Section: Summary -->
 

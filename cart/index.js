@@ -82,6 +82,14 @@ function update_checkout_prices() {
     subtotalElement.textContent = `$${subtotal}`;
     taxElement.textContent = `$${tax}`;
     totalElement.textContent = `$${total}`;
+    const discount_amount = parseFloat(cartItems?.reduce((acc, item) => acc + item.people * item.pricePerPerson * cartItems[0].discount / 100, 0) || 0.00).toFixed(2);
+    get("discount").textContent = `- $${discount_amount}`;
+    if (discount_amount !== "0.00") {
+      get("discount-parent").classList.remove("visually-hidden");
+    } else {
+      get("discount-parent").classList.add("visually-hidden");
+    }
+    get("total").textContent = `$${(parseFloat(total) - parseFloat(discount_amount)).toFixed(2)}`;
 }
 
 function activate_inputs() {
@@ -113,6 +121,7 @@ function activate_inputs() {
       } else
         window.localStorage.removeItem("cart");
       get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
+      update_checkout_prices();
       activate_inputs();
     });
   });
@@ -138,7 +147,11 @@ applyBtn.addEventListener('click', async () => {
     cartItems[i].discount = discount;
   }
   window.localStorage.setItem("cart", JSON.stringify(cartItems));
+  const discount_amount = parseFloat(cartItems?.reduce((acc, item) => acc + item.people * item.pricePerPerson * discount / 100, 0) || 0.00).toFixed(2);
+  get("discount-parent").classList.remove("visually-hidden");
+  get("discount").innerText = `- $${discount_amount}`;
   get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
+  get("total").innerText = `$${parseFloat(get("total").innerText.substring(1)) - parseFloat(discount_amount)}`;
   activate_inputs();
   document.getElementById("promo-success-modal-text").textContent = `Nice! You saved ${discount}% on your booking!`;
   new mdb.Modal(document.getElementById("promo-success-modal")).show();
@@ -154,3 +167,15 @@ setInterval(() => {
   else
     get("checkout-btn").classList.remove("disabled");
 }, 200);
+
+get("checkout-btn").addEventListener('click', () => {
+  get("checkout-btn").innerHTML = `
+    <div class="spinner-border text-light spinner-border-sm" role="status">
+      <span class="visually-hidden">Redirecting...</span>
+    </div><div style="margin-left: .5rem!important"><span>Redirecting</span></div>`;
+  get("checkout-btn").disabled = true;
+
+  setTimeout(() => {
+    window.location.href = "/checkout";
+  }, 1500);
+});
