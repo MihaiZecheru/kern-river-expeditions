@@ -25,6 +25,20 @@ const payNowBtn = get("pay-now-btn");
 update_checkout_prices();
 
 payNowBtn.addEventListener("click", () => {
+  if (!window.localStorage.getItem("saved-card")) {
+    new mdb.Modal(get("card-not-saved-modal")).show();
+    payNowBtn.classList.remove("disabled");
+    console.log(payNowBtn.disabled)
+    payNowBtn.innerHTML = "Pay Now";
+    return;
+  }
+
+  payNowBtn.innerHTML = `
+  <div class="spinner-border text-light spinner-border-sm" role="status">
+    <span class="visually-hidden">Processing Payment...</span>
+  </div><div style="margin-left: .5rem!important"><span>Processing Payment</span></div>`;
+  payNowBtn.classList.add("disabled");
+
   setTimeout(() => {
     const order = {
       email,
@@ -70,16 +84,9 @@ get("save-card-btn").addEventListener("click", () => {
   get("expiration").disabled = true;
   get("cvv").disabled = true;
   setTimeout(() => {
+    window.localStorage.setItem("saved-card", true);
     new mdb.Alert(get("alert-success")).show();
     get("save-card-btn").innerHTML = "Save Card";
     get("save-card-btn").disabled = false;
-  }, 2000);
-});
-
-payNowBtn.addEventListener("click", () => {
-  payNowBtn.innerHTML = `
-  <div class="spinner-border text-light spinner-border-sm" role="status">
-    <span class="visually-hidden">Processing Payment...</span>
-  </div><div style="margin-left: .5rem!important"><span>Processing Payment</span></div>`;
-  payNowBtn.disabled = true;
+  }, 1500);
 });
