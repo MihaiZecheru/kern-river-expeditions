@@ -29,6 +29,26 @@
   <title>Kern River Expeditions</title>
 </head>
 <body>
-  
+  <main style="margin-top: 5rem">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12">
+          <h1 class="text-center">Thank you for your reservation!</h1>
+          <p class="text-center">Your confirmation number is <span class="h5" id="confirmation-number"></span></p>
+          <p class="text-center">A confirmation email has been sent to <span class="h5" id="email"></span></p>
+          <p class="text-center">We look forward to seeing you on the river!</p>
+          </div>
+        <a type="button" class="btn btn-primary w-50" href="/">Back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const confirmationNumber = window.localStorage.getItem('confirmationNumber');    
+    const email = JSON.parse(window.localStorage.getItem('login_cookie')).email;
+    document.getElementById('confirmation-number').innerText = confirmationNumber;
+    document.getElementById('email').innerText = email;
+    window.localStorage.removeItem('confirmationNumber');
+  </script>
 </body>
 </html>
