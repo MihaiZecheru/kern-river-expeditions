@@ -19,6 +19,14 @@ function update_checkout_prices() {
   subtotalElement.textContent = `$${subtotal}`;
   taxElement.textContent = `$${tax}`;
   totalElement.textContent = `$${total}`;
+  const discount_amount = parseFloat(cartItems?.reduce((acc, item) => acc + item.people * item.pricePerPerson * cartItems[0].discount / 100, 0) || 0.00).toFixed(2);
+  get("discount").textContent = `- $${discount_amount}`;
+  if (discount_amount !== "0.00") {
+    get("discount-parent").classList.remove("visually-hidden");
+  } else {
+    get("discount-parent").classList.add("visually-hidden");
+  }
+  get("total").textContent = `$${(parseFloat(total) - parseFloat(discount_amount)).toFixed(2)}`;
 }
 
 const payNowBtn = get("pay-now-btn");
@@ -28,7 +36,6 @@ payNowBtn.addEventListener("click", () => {
   if (!window.localStorage.getItem("saved-card")) {
     new mdb.Modal(get("card-not-saved-modal")).show();
     payNowBtn.classList.remove("disabled");
-    console.log(payNowBtn.disabled)
     payNowBtn.innerHTML = "Pay Now";
     return;
   }
@@ -56,6 +63,8 @@ payNowBtn.addEventListener("click", () => {
     }).then(res => {
       if (res.status === 200) {
         window.localStorage.removeItem("cart");
+        window.localStorage.removeItem("saved-card");
+        window.localStorage.setItem("confirmationNumber", order.order_id);
         window.location.href = "/confirmation";
       }
     });
@@ -90,3 +99,9 @@ get("save-card-btn").addEventListener("click", () => {
     get("save-card-btn").disabled = false;
   }, 1500);
 });
+
+if (cartItems?.some(item => item.discount)) {
+  get("discount-parent").classList.remove("visually-hidden");
+} else {
+  get("discount-parent").classList.add("visually-hidden");
+}
