@@ -5,6 +5,11 @@ function get(id) {
   return document.getElementById(id);
 }
 
+const login_cookie = window.localStorage.getItem("login_cookie");
+if (login_cookie && JSON.parse(login_cookie).isAdmin === true) {
+  get("icons-list").innerHTML += `<li class="nav-item me-3 me-lg-0"><a class="nav-link" href="/admin"><i class="fas fa-lock"></i></a></li>`;
+}
+
 const cartItems = JSON.parse(window.localStorage.getItem("cart"))?.filter(item => item !== null);
 const email = JSON.parse(window.localStorage.getItem("login_cookie")).email;
   
