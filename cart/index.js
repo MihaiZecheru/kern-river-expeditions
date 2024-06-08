@@ -151,7 +151,7 @@ applyBtn.addEventListener('click', async () => {
   get("discount-parent").classList.remove("visually-hidden");
   get("discount").innerText = `- $${discount_amount}`;
   get("cart-body").innerHTML = mapCartItemsToHTML(cartItems);
-  get("total").innerText = `$${parseFloat(get("total").innerText.substring(1)) - parseFloat(discount_amount)}`;
+  get("total").innerText = `$${(parseFloat(get("total").innerText.substring(1)) - parseFloat(discount_amount)).toFixed(2)}`; // TODO: fix to fixed on total
   activate_inputs();
   document.getElementById("promo-success-modal-text").textContent = `Nice! You saved ${discount}% on your booking!`;
   new mdb.Modal(document.getElementById("promo-success-modal")).show();
