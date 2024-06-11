@@ -22,7 +22,7 @@ nav {
   background-color: var(--mdb-blue);
 }
 
-main, body {
+body, html {
   height: 100vh!important;
 }
 body {
@@ -31,6 +31,7 @@ body {
 
 main {
   margin-top: 10vh;
+  height: 90vh!important;
 }
 
 #stepper-wrapper {

@@ -84,11 +84,7 @@ function get_times(_activity, _date) {
     { time: '4:00 PM', disabled: true },
     { time: '5:00 PM', disabled: false },
     { time: '6:00 PM', disabled: false },
-    { time: '7:00 PM', disabled: false },
-    { time: '8:00 PM', disabled: false },
-    { time: '9:00 PM', disabled: false },
   ];
-
 }
 
 datepickerElement.addEventListener("close.mdb.datepicker", (e) => {
@@ -152,4 +148,8 @@ document.getElementById("book-btn").addEventListener("click", async () => {
 
   window.localStorage.setItem("cart", JSON.stringify([booking].concat(JSON.parse(window.localStorage.getItem("cart"))) || [booking]));
   window.location.href = "/cart";
+});
+
+const stepper = new mdb.Stepper(get("stepper"), {
+  stepperLinear: true
 });

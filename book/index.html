@@ -75,41 +75,69 @@
   <!-- Navbar -->
 
   <main class="d-flex justify-content-center">
-    <!-- TODO: add stepper menu -->
-    <div class="v-stack" style="width: 50%;">
-      <div>
-        <select id="activity-select" data-mdb-select-init>
-          <option value="rr" >White Water River Rafting</option>
-          <option value="gh" >Guided Hike</option>
-          <option value="atv">Off-Road ATV</option>
-          <option value="f">Fishing</option>
-        </select>
-      </div>
-
-      <div style="width: 15rem;">
-        <div class="form-outline datepicker-disable-past" data-mdb-datepicker-init data-mdb-input-init id="">
-          <input type="text" class="form-control" id="datepicker" data-mdb-toggle="datepicker" />
-          <label for="datepicker" class="form-label">Select a date</label>
-        </div>
-      </div>
-
-      <div>
-        <ul class="list-group list-group-light" id="available-times-list">
-          <!--
-            <li class="list-group-item px-3 border-0 active" aria-current="true">
-              An active item
-            </li>
-            <li class="list-group-item px-3 border-0">A second item</li>
-          -->
-          <!-- NOTE: the above will be added in dynamically once a date is chosen -->
-        </ul>
-      </div>
-
-      <div class="w-100">
-        <button class="btn btn-primary w-100" id="book-btn">Book Now</button>
-      </div>
+    <div style="width: 50%;">
+      <ul class="stepper" data-mdb-stepper-init id="stepper">
+        <li class="stepper-step stepper-active">
+          <div class="stepper-head">
+            <span class="stepper-head-icon">
+              <i class="fas fa-tree"></i>
+            </span>
+            <span class="stepper-head-text">Select Activity</span>
+          </div>
+          <div class="stepper-content py-3">
+            <div>
+              <select id="activity-select" data-mdb-select-init>
+                <option value="rr" >White Water River Rafting</option>
+                <option value="gh" >Guided Hike</option>
+                <option value="atv">Off-Road ATV</option>
+                <option value="f">Fishing</option>
+              </select>
+              <div class="invalid-feedback">invalid</div>
+            </div>
+          </div>
+        </li>
+        <li class="stepper-step">
+          <div class="stepper-head">
+            <span class="stepper-head-icon">
+              <i class="fas fa-calendar"></i>
+            </span>
+            <span class="stepper-head-text">Schedule Date</span>
+          </div>
+          <div class="stepper-content py-3">
+            <div> <!-- style="width: 15rem;" -->
+              <div class="form-outline datepicker-disable-past" data-mdb-datepicker-init data-mdb-input-init id="">
+                <input type="text" class="form-control" id="datepicker" data-mdb-toggle="datepicker" />
+                <label for="datepicker" class="form-label">Select a date</label>
+                <div class="invalid-feedback">invalid</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="stepper-step">
+          <div class="stepper-head">
+            <span class="stepper-head-icon">
+              <i class="fas fa-clock"></i>
+            </span>
+            <span class="stepper-head-text">Choose Time</span>
+          </div>
+          <div class="stepper-content py-3">
+            <div>
+              <ul class="list-group list-group-light" id="available-times-list">
+                <!--
+                  <li class="list-group-item px-3 border-0 active" aria-current="true">
+                    An active item
+                  </li>
+                  <li class="list-group-item px-3 border-0">A second item</li>
+                -->
+                <!-- NOTE: the above will be added in dynamically once a date is chosen -->
+              </ul>
+              <div class="invalid-feedback">invalid</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <button class="btn btn-primary w-100" id="book-btn">Book Now</button>
     </div>
-
   </main>
 
 </body>
