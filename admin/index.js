@@ -122,8 +122,8 @@ function setOrderGroupEventListeners(orderElements) {
                   </div>
                   <h6 class="card-subtitle mb-4 text-success">+ $${order.total}</h6>
                   <p class="card-text">
-                    ${order.items.reduce((acc, item) => acc + `${item.name} - $${item.pricePerPerson} x ${item.people}\n`, "")}
-                    ${order.items[0].discount ? '<br><br>' : ''}
+                    ${order.items.reduce((acc, item) => acc + `${item.name} - $${item.pricePerPerson} x ${item.people}<br>`, "")}
+                    ${order.items[0].discount ? '<br>' : ''}
                     <span class="text-danger">${order.items[0].discount ? `%${order.items[0].discount} discount applied\n` : ""}</span>
                   </p>
                 </div>
